@@ -1,0 +1,48 @@
+<!-- src/_includes/serviciosForestales.njk -->
+<section class="py-20 bg-[#f2f1e6]">
+    <div class="container mx-auto px-4 lg:px-8">
+      <!-- Encabezado con efecto decorativo -->
+      <div class="text-center mb-16">
+        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4 relative inline-block" data-aos="fade-up">
+          <span class="bg-gradient-to-r from-emerald-600 to-green-800 bg-clip-text text-transparent">
+            {{ servicios_forestales.titulo }}
+          </span>
+          <span class="absolute -bottom-2 left-1/2 w-24 h-1 bg-emerald-500 transform -translate-x-1/2"></span>
+        </h2>
+        <p class="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed" data-aos="fade-up">
+          {{ servicios_forestales.subtitulo }}
+        </p>
+      </div>
+  
+      <!-- Grid de Servicios mejorado -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {% for servicio in servicios_forestales.servicios %}
+        <div class="group relative bg-white rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2" data-aos="zoom-in">
+          <!-- Imagen con overlay y efecto zoom -->
+          <div class="relative h-64 overflow-hidden">
+            <img 
+              src="{{ servicio.imagen }}" 
+              alt="{{ servicio.nombre }}" 
+              class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
+              loading="lazy"
+            >
+            <div class="absolute inset-0 bg-gradient-to-t from-gray-900/30 to-transparent"></div>
+          </div>
+          
+          <!-- Contenido con nuevo diseño -->
+          <div class="px-6 py-6">
+            <div class="flex items-center mb-3">
+              <div class="w-8 h-8 bg-emerald-500 rounded-full flex items-center justify-center mr-3">
+                <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+              </div>
+              <h3 class="text-2xl font-bold text-gray-900">{{ servicio.nombre }}</h3>
+            </div>
+            <p class="text-gray-600 leading-loose text-lg">{{ servicio.descripcion }}</p>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>

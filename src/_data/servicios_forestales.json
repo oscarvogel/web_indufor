@@ -1,0 +1,21 @@
+{
+    "titulo": "Servicios Forestales",
+    "subtitulo": "Ofrecemos servicios de cosecha y transporte forestal, priorizando la sostenibilidad y eficiencia en cada proyecto.",
+    "servicios":[
+        {
+            "nombre": "Cosecha sostenible",
+            "descripcion": "Implementamos técnicas avanzadas para la cosecha que promueven la salud del ecosistema y el desarrollo responsable.",
+            "imagen": "/assets/images/servicios/cosecha_madera.avif"
+        },
+        {
+            "nombre": "Transporte Eficiente",
+            "descripcion": "Contamos con una logística efectiva que garantiza el transporte seguro y responsable de los recursos forestales.",
+            "imagen": "/assets/images/servicios/transporte_madera.avif"
+        },
+        {
+            "nombre": "Gestión de residuos",
+            "descripcion": "Nos encargamos de la gestión de residuos forestales, asegurando su correcto tratamiento y disposición final.",
+            "imagen": "/assets/images/servicios/gestion_residuos.avif"
+        }
+    ]
+}

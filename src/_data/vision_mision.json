@@ -1,0 +1,9 @@
+{
+    "titulo": "Indufor SRL: Cosecha y Transporte Forestal Sostenible",
+    "vision": "Trabajamos con integridad y responsabilidad, ofreciendo servicios de alta calidad que cumplen con los estándares de eficiencia y sostenibilidad, contribuyendo al bienestar de las generaciones futuras.",
+    "mision": "Brindar servicios de cosecha y transporte forestal sostenible, con un enfoque en la eficiencia y la calidad, respetando el medio ambiente y promoviendo el desarrollo sostenible de la región.",
+    "imagen":{
+        "url": "/assets/images/vision_mision.png",
+        "alt": "Cosecha y transporte forestal sostenible"
+    }
+}

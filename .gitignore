@@ -1,0 +1,10 @@
+# Dependencias
+node_modules/
+
+# Sitio generado por Eleventy
+_site/
+
+# Archivos locales y del sistema
+.DS_Store
+Thumbs.db
+npm-debug.log*

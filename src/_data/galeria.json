@@ -1,0 +1,22 @@
+[
+    {
+        "id": 1,
+        "src": "path/to/image1.jpg",
+        "alt": "Imagen 1"
+    },
+    {
+        "id": 2,
+        "src": "path/to/image2.jpg",
+        "alt": "Imagen 2"
+    },
+    {
+        "id": 3,
+        "src": "path/to/image3.jpg",
+        "alt": "Imagen 3"
+    },
+    {
+        "id": 4,
+        "src": "path/to/image4.jpg",
+        "alt": "Imagen 4"
+    }
+]

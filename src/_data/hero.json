@@ -1,0 +1,10 @@
+{
+    "titulo": "Cosecha y transporte forestal sostenible",
+    "description": "Comprometidos con la gestión responsable de recursos naturales.",
+    "image": "/assets/images/slide1.jpeg",
+    "video": "/assets/videos/hero.mp4",
+    "cta": {
+        "texto": "Servicios",
+        "link": "/servicios"
+    } 
+  }

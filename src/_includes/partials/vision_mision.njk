@@ -1,0 +1,26 @@
+
+
+<div class="max-w-6xl mx-auto px-4 py-8">
+  <!-- Título Principal -->
+  <h1 class="text-3xl font-bold text-center text-gray-800 mb-8">{{ vision_mision.titulo }}</h1>
+
+  <!-- Contenedor de las Columnas -->
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+    <!-- Primera Columna -->
+    <div class="text-center" data-aos="fade-right">
+      <h2 class="text-xl font-semibold text-gray-700 mb-2">Nuestra Vision</h2>
+      <p class="text-gray-600">{{ vision_mision.vision }}</p>
+    </div>
+
+    <!-- Segunda Columna -->
+    <div class="text-center" data-aos="fade-left">
+      <h2 class="text-xl font-semibold text-gray-700 mb-2">Nuetra Mision</h2>
+      <p class="text-gray-600">{{ vision_mision.mision }}</p>
+    </div>
+  </div>
+
+  <!-- Imagen Debajo de las Columnas -->
+  <div class="mt-8" data-aos="fade-up">
+    <img src="{{ vision_mision.imagen.url }}" alt="{{ vision_mision.imagen.alt }}" class="w-full h-auto rounded-lg shadow-md">
+  </div>
+</div>
