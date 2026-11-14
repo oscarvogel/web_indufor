@@ -1,0 +1,240 @@
+@import "@fontsource-variable/inter-tight/index.css";
+@import "@fontsource/instrument-serif/400.css";
+@import "@fontsource/imperial-script/400.css";
+@import "tailwindcss";
+
+@source not "../entrega-imagenes-indufor";
+
+/* Tres colores (docs/decisiones.md). Los intermedios salen de su opacidad. */
+@theme {
+  --color-monte: #16302b;
+  --color-pergamino: #efe8d8;
+  --color-tierra: #a83e24;
+
+  --font-sans: "Inter Tight Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Instrument Serif", Georgia, "Times New Roman", serif;
+  --font-script: "Imperial Script", "Instrument Serif", cursive;
+
+  --ease-rebote: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@layer base {
+  html {
+    background: var(--color-monte);
+    color: var(--color-monte);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+  }
+  html.lenis {
+    scroll-behavior: auto;
+  }
+  body {
+    overflow-x: clip;
+  }
+  :focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 3px;
+  }
+}
+
+/* Título enorme: siempre una sola palabra corta. */
+.titulo-enorme {
+  font-weight: 700;
+  font-size: clamp(3.5rem, 15.5vw, 15rem);
+  line-height: 0.9;
+  letter-spacing: -0.03em;
+}
+
+/* La inicial caligráfica va solo en títulos cortos (Errores/tipografia-display-en-texto-largo). */
+.subtitulo {
+  font-family: var(--font-serif);
+  font-size: clamp(2.5rem, 4.4vw, 4.25rem);
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+.inicial {
+  font-family: var(--font-script);
+  font-size: 2.05em;
+  line-height: 0;
+  letter-spacing: 0;
+  margin-right: -0.06em;
+  vertical-align: -0.09em;
+}
+
+.bajada {
+  font-family: var(--font-serif);
+  font-size: clamp(1.5rem, 2.2vw, 2.125rem);
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+  text-wrap: pretty;
+}
+
+.lectura {
+  font-size: 1.0625rem;
+  line-height: 1.55;
+  text-wrap: pretty;
+}
+
+/* Hoja de papel: sube por encima de la escena fija. */
+.hoja {
+  position: relative;
+  z-index: 10;
+  background: var(--color-pergamino);
+}
+.hoja::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("/img/papel.webp") 0 0 / 256px;
+  pointer-events: none;
+}
+.borde-rasgado {
+  position: absolute;
+  left: 0;
+  bottom: calc(100% - 1px);
+  width: 100%;
+  height: clamp(70px, 10vw, 260px);
+  background: url("/img/borde-rasgado.webp") center bottom / 100% 100% no-repeat;
+  pointer-events: none;
+}
+/* El mismo grano que la hoja, recortado a la silueta del borde: si no, se nota la unión. */
+.borde-rasgado::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("/img/papel.webp") 0 0 / 256px;
+  mask: url("/img/borde-rasgado.webp") center bottom / 100% 100% no-repeat;
+}
+.borde-rasgado.abajo {
+  top: calc(100% - 1px);
+  bottom: auto;
+  transform: scaleY(-1);
+}
+
+/* Escena: queda fija mientras el papel la cubre; sin JavaScript se ve igual. */
+.escena {
+  position: sticky;
+  top: 0;
+  height: 100svh;
+  overflow: clip;
+  background: var(--color-monte);
+}
+
+/* Capas de la apertura. Por la máscara, las líneas aparecen desde el centro y la pintura se abre. */
+.capa {
+  position: absolute;
+  inset: 0;
+  will-change: transform;
+}
+.capa img {
+  position: absolute;
+  max-width: none;
+}
+
+.pintura,
+.grabado {
+  --radio: 0%;
+  position: absolute;
+  inset: 0;
+}
+.pintura {
+  mask-image: radial-gradient(circle at 50% 55%, transparent var(--radio), #000 calc(var(--radio) + 18%));
+}
+.grabado {
+  mask-image: radial-gradient(circle at 50% 55%, #000 var(--radio), transparent calc(var(--radio) + 18%));
+  visibility: hidden;
+}
+
+/* Destello de cuatro puntas. */
+.destello {
+  position: absolute;
+  width: var(--t);
+  height: var(--t);
+  margin: calc(var(--t) / -2) 0 0 calc(var(--t) / -2);
+  background:
+    radial-gradient(circle, var(--color-pergamino) 0 2px, transparent 6px),
+    linear-gradient(90deg, transparent, var(--color-pergamino), transparent) center / 100% 1px no-repeat,
+    linear-gradient(0deg, transparent, var(--color-pergamino), transparent) center / 1px 100% no-repeat;
+}
+
+/* Solo en escritorio con movimiento: la apertura pide recorrido; en el resto es una imagen fija. */
+.recorrido {
+  height: 0;
+}
+@media (min-width: 1024px) and (prefers-reduced-motion: no-preference) {
+  .recorrido {
+    height: 170svh;
+  }
+}
+
+/* El índice cambia de tono según lo que tenga detrás. */
+.tono-claro {
+  color: var(--color-pergamino);
+}
+.tono-oscuro {
+  color: var(--color-monte);
+}
+/* Sobre pintura o grabado, el índice necesita un velo: el fondo es muy irregular. */
+.indice.tono-claro {
+  background: rgb(22 48 43 / 0.82);
+}
+.barra.tono-claro {
+  background: linear-gradient(rgb(22 48 43 / 0.75), transparent);
+}
+.barra.tono-oscuro {
+  background: rgb(239 232 216 / 0.94);
+}
+/* El cielo tiene nubes muy claras justo detrás del título. */
+.apertura-texto::before {
+  content: "";
+  position: absolute;
+  inset: -22% -24%;
+  z-index: -1;
+  background: radial-gradient(closest-side, rgb(22 48 43 / 0.86) 55%, rgb(22 48 43 / 0.6) 78%, transparent);
+}
+.barra,
+.indice {
+  transition:
+    color 0.3s ease-out,
+    background-color 0.3s ease-out;
+}
+
+.logo {
+  display: block;
+  background: currentColor;
+  mask: url("/img/logo-indufor-horizontal.svg") center / contain no-repeat;
+}
+
+.boton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  border-radius: 999px;
+  padding: 0.8rem 1.4rem;
+  min-height: 44px;
+  background: var(--color-tierra);
+  color: var(--color-pergamino);
+  font-weight: 600;
+  transition: transform 0.3s var(--ease-rebote);
+}
+.boton:hover {
+  transform: translateY(-2px) scale(1.03);
+}
+
+.enlace {
+  color: var(--color-tierra);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+  text-decoration-thickness: 1px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .boton {
+    transition: none;
+  }
+}

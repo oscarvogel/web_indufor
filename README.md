@@ -1,43 +1,26 @@
 # Indufor SRL — sitio web
 
-Sitio institucional de Indufor SRL, empresa de Misiones dedicada a servicios de cosecha y transporte forestal. Está construido como un sitio estático con [Eleventy](https://www.11ty.dev/) y plantillas Nunjucks.
+Sitio institucional de Indufor SRL, empresa de Misiones dedicada a servicios de cosecha y transporte forestal. Es una sola página con React, React Router (HTML prerenderizado), Tailwind 4, GSAP y Lenis.
 
 ## Requisitos
 
-- Node.js 18 o posterior.
-- npm, incluido con Node.js.
+Node.js 20 o posterior.
 
-## Puesta en marcha
+## Comandos
 
 ```bash
 npm install
+npm run dev       # desarrollo
+npm test          # compila y comprueba el HTML generado
+npm run preview   # sirve lo compilado
+npm run images    # regenera public/img/ (requiere entrega-imagenes-indufor/)
 ```
-
-Generar el sitio en `_site/`:
-
-```bash
-npx @11ty/eleventy
-```
-
-Iniciar el servidor local de desarrollo:
-
-```bash
-npx @11ty/eleventy --serve
-```
-
-Eleventy informa la dirección local al iniciar el servidor. Los cambios en plantillas y archivos observados se vuelven a generar durante el desarrollo.
-
-## Secciones del sitio
-
-- `/`: portada, presentación, servicios, galería y ubicación.
-- `/servicios/`: servicios forestales y de transporte.
-- `/nosotros/`: información institucional.
-- `/contacto/`: datos de contacto y ubicación.
-
-## Documentación
-
-Consultar [Documentación del proyecto](docs/proyecto.md) para conocer la estructura, el flujo de generación, los datos editables, los recursos estáticos y las consideraciones para publicar el sitio.
 
 ## Publicación
 
-El resultado de la compilación es el directorio `_site/`, que puede servirse desde un hosting de sitios estáticos. Este repositorio no incluye por ahora una configuración de despliegue automático.
+Publicar el contenido de `build/client/` en cualquier hosting estático.
+
+## Documentación
+
+- [Decisiones del rediseño](docs/decisiones.md): análisis, colores, fuentes, imágenes y movimiento.
+- [Documentación del proyecto](docs/proyecto.md): estructura y edición de contenido.

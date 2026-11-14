@@ -8,3 +8,10 @@ _site/
 .DS_Store
 Thumbs.db
 npm-debug.log*
+
+# Salida de React Router
+build/
+.react-router/
+
+# Originales de imágenes (41 MB): se versiona solo public/img/
+entrega-imagenes-indufor/

@@ -1,0 +1,150 @@
+{
+  "cielo": {
+    "width": 1774,
+    "height": 887,
+    "widths": [
+      960,
+      1774
+    ]
+  },
+  "cielo-lineas": {
+    "width": 1774,
+    "height": 887,
+    "widths": [
+      1774
+    ]
+  },
+  "selva": {
+    "width": 2172,
+    "height": 724,
+    "widths": [
+      960,
+      2172
+    ]
+  },
+  "selva-lineas": {
+    "width": 2172,
+    "height": 724,
+    "widths": [
+      2172
+    ]
+  },
+  "primer-plano": {
+    "width": 1774,
+    "height": 887,
+    "widths": [
+      960,
+      1774
+    ]
+  },
+  "primer-plano-lineas": {
+    "width": 1774,
+    "height": 887,
+    "widths": [
+      1774
+    ]
+  },
+  "tronco": {
+    "width": 2172,
+    "height": 724,
+    "widths": [
+      960,
+      2172
+    ]
+  },
+  "tronco-lineas": {
+    "width": 2172,
+    "height": 724,
+    "widths": [
+      2172
+    ]
+  },
+  "cosecha": {
+    "width": 1672,
+    "height": 941,
+    "widths": [
+      960,
+      1672
+    ]
+  },
+  "transporte": {
+    "width": 1672,
+    "height": 941,
+    "widths": [
+      960,
+      1672
+    ]
+  },
+  "residuos": {
+    "width": 1774,
+    "height": 887,
+    "widths": [
+      960,
+      1774
+    ]
+  },
+  "cosechadora": {
+    "width": 1536,
+    "height": 1024,
+    "widths": [
+      960,
+      1536
+    ]
+  },
+  "camion": {
+    "width": 1774,
+    "height": 887,
+    "widths": [
+      960,
+      1774
+    ]
+  },
+  "chips": {
+    "width": 1774,
+    "height": 887,
+    "widths": [
+      960,
+      1774
+    ]
+  },
+  "araucaria": {
+    "width": 1024,
+    "height": 1536,
+    "widths": [
+      960,
+      1024
+    ]
+  },
+  "casco": {
+    "width": 1536,
+    "height": 1024,
+    "widths": [
+      960,
+      1536
+    ]
+  },
+  "cabezal": {
+    "width": 1600,
+    "height": 1506,
+    "widths": [
+      960,
+      1600
+    ]
+  },
+  "tablet": {
+    "width": 1536,
+    "height": 1024,
+    "widths": [
+      960,
+      1536
+    ]
+  },
+  "tocon": {
+    "width": 1536,
+    "height": 1024,
+    "widths": [
+      960,
+      1536
+    ]
+  }
+}
