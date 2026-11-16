@@ -1,14 +1,30 @@
 {
-  "url": "https://www.induforsrl.com.ar",
-  "titulo": "Indufor SRL | Cosecha y Transporte Forestal Sostenible",
-  "descripcion": "Indufor SRL hace cosecha y transporte forestal en Misiones, con foco en la seguridad laboral, el cuidado del ambiente y el desarrollo de la comunidad.",
+  "url": "https://indufor.com.ar",
+  "titulo": "Indufor SRL | Cosecha y Transporte Forestal en Misiones",
+  "descripcion": "Indufor SRL hace cosecha y transporte forestal en Misiones y Corrientes, con foco en la seguridad laboral, el cuidado del ambiente y la comunidad.",
   "empresa": {
     "telefono": "+54 9 3743 48-3443",
+    "telefonoE164": "+5493743483443",
     "wsp": "543743483443",
     "email": "indufor@prico.com.ar",
-    "direccion": "Ruta Nacional 12 Km 1478, Garuhape, Misiones, Argentina",
-    "horario": "Lunes a Viernes: 8:00 - 18:00",
-    "mapa": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4223.548791881235!2d-54.9708327238132!3d-26.821597089404314!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94f827e4fb9305e9%3A0xbc8e1b244b417f82!2sIndufor%20SRL!5e1!3m2!1ses!2sar!4v1738421058438!5m2!1ses!2sar"
+    "direccion": "Ruta Nacional 12 Km 1478, Garuhapé, Misiones (N3334), Argentina",
+    "calle": "Ruta Nacional 12 Km 1478",
+    "localidad": "Garuhapé",
+    "provincia": "Misiones",
+    "codigoPostal": "N3334",
+    "pais": "AR",
+    "lat": -26.8216019,
+    "lng": -54.9682578,
+    "horario": "Lunes a viernes: 7:30 a 12:00 y 14:30 a 18:00. Sábados: 7:30 a 12:00. Domingos: cerrado.",
+    "horarios": [
+      { "dias": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "abre": "07:30", "cierra": "12:00" },
+      { "dias": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "abre": "14:30", "cierra": "18:00" },
+      { "dias": "Saturday", "abre": "07:30", "cierra": "12:00" }
+    ],
+    "areasServidas": ["Misiones", "Corrientes"],
+    "legalName": "Indufor S.R.L.",
+    "mapa": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4223.548791881235!2d-54.9682578!3d-26.8216019!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94f827e4fb9305e9%3A0xbc8e1b244b417f82!2sIndufor%20SRL!5e1!3m2!1ses!2sar!4v1738421058438!5m2!1ses!2sar",
+    "mapaUrl": "https://www.google.com/maps/place/?q=place_id:ChIJ6QWT--Qn-JQRgn9BSyQbjrw"
   },
   "ubicacion": "Nuestra oficina central está sobre la Ruta Nacional 12, en plena zona forestal de Misiones.",
   "apertura": {
@@ -18,7 +34,7 @@
   "indufor": {
     "titulo": "Indufor",
     "subtitulo": "Quiénes somos",
-    "bajada": "Indufor SRL es una empresa de cosecha y transporte forestal que trabaja el monte de forma responsable y sostenible.",
+    "bajada": "Indufor SRL es una empresa de cosecha y transporte forestal que trabaja el monte en Misiones y Corrientes de forma responsable y sostenible.",
     "parrafos": [
       "Desde el principio quisimos estar entre los mejores del sector. Para eso cuidamos la calidad del servicio, la eficiencia y el impacto sobre el monte.",
       "Conocemos las técnicas de cosecha y la logística del rubro, y eso nos permite trabajar de forma eficiente y segura: la madera llega a tiempo y en buen estado. Invertimos de forma constante en equipos y tecnología actuales, y en prácticas que reducen el impacto ambiental y ayudan a que el bosque se regenere.",

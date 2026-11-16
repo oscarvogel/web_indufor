@@ -1,0 +1,23 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  RewriteCond %{HTTP_HOST} ^www\. [NC]
+  RewriteCond %{REQUEST_URI} !^/\.well-known/
+  RewriteRule ^ https://indufor.com.ar%{REQUEST_URI} [L,R=301]
+
+  RewriteCond %{HTTPS} !=on
+  RewriteCond %{HTTP:X-Forwarded-Proto} !https
+  RewriteCond %{REQUEST_URI} !^/\.well-known/
+  RewriteRule ^ https://indufor.com.ar%{REQUEST_URI} [L,R=301]
+
+  RewriteRule ^servicios/?$ /#cosecha [NE,R=301,L]
+  RewriteRule ^nosotros/?$ /#indufor [NE,R=301,L]
+  RewriteRule ^contacto/?$ /#contacto [NE,R=301,L]
+</IfModule>
+
+<IfModule mod_headers.c>
+  Header always set Strict-Transport-Security "max-age=31536000" env=HTTPS
+  <Files "__spa-fallback.html">
+    Header set X-Robots-Tag "noindex, nofollow"
+  </Files>
+</IfModule>

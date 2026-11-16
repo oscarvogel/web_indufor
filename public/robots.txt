@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /__spa-fallback.html
 
-Sitemap: https://www.induforsrl.com.ar/sitemap.xml
+Sitemap: https://indufor.com.ar/sitemap.xml
