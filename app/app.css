@@ -237,4 +237,21 @@
   .boton {
     transition: none;
   }
+  /* Sin secuencias: documento estático que fluye, sin escenas fijas ni máscaras. */
+  .escena {
+    position: relative;
+  }
+  .capa {
+    will-change: auto;
+  }
+  .pintura {
+    mask-image: none;
+  }
+  .grabado {
+    display: none;
+  }
+  /* Deja el borde rasgado debajo de la primera pantalla, sobre la misma pintura. */
+  #inicio .escena {
+    height: calc(100svh + clamp(70px, 10vw, 260px));
+  }
 }
