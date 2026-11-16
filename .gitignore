@@ -15,3 +15,6 @@ build/
 
 # Originales de imágenes (41 MB): se versiona solo public/img/
 entrega-imagenes-indufor/
+
+# Credenciales de despliegue (no versionar)
+.ftp-credentials
