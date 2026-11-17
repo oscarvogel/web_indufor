@@ -122,6 +122,12 @@ Prompts usados para las piezas nuevas, que sirven de base si hace falta otra en 
 - **Apertura:** escena fija con `position: sticky`. Las capas se mueven a distinta velocidad, y la pintura pasa a líneas de grabado.
 - **Capítulos:** el fondo queda fijo con `sticky` y el papel rasgado sube por encima. Ese cruce es CSS puro; GSAP solo anima lo que hay dentro.
 - **Lectura:** revelados cortos, sin atar al scroll.
+- **Cargador (2026-11-16):** fondo verde monte y el logo horizontal en pergamino, que se rellena de abajo hacia arriba sin moverse de su lugar. Al abrirse, se desvanece y deja ver el monte detrás.
+  - Espera solo las fuentes y las imágenes visibles en la pantalla de llegada: la apertura, el capítulo del enlace o la posición que restaura el navegador. Las imágenes diferidas del resto de la página no cuentan.
+  - Con carga rápida dura alrededor de 1 s. Si tarda más, el logo espera al 82 %, sin porcentaje. Tiene dos topes: 3 s para los recursos después de hidratar y 6 s en `<head>` por si el JavaScript falla.
+  - GSAP queda en pausa mientras el cargador está encima, así las entradas del capítulo de llegada se ven y no corren tapadas.
+  - Con movimiento reducido, el logo aparece completo y quieto.
+  - Sin JavaScript no aparece: lo activa una clase que pone el script.
 
 **Reglas:**
 - Se anima solo `transform` y `opacity`, salvo la máscara de la apertura.

@@ -33,6 +33,16 @@ for (const [ruta, ancla] of [['servicios', 'cosecha'], ['nosotros', 'indufor'], 
   exigir(leer(`${ruta}/index.html`).includes(`url=/#${ancla}`), `/${ruta}/ no redirige a #${ancla}`)
 }
 
+// Un solo dominio: si sitemap, robots o redirecciones apuntan a otro, Google recibe señales cruzadas.
+for (const ruta of ['sitemap.xml', 'robots.txt', 'servicios/index.html', 'nosotros/index.html', 'contacto/index.html']) {
+  const dominios = leer(ruta).match(/https?:\/\/[^/"<\s]+/g)?.filter((d) => !/sitemaps\.org/.test(d)) ?? []
+  exigir(dominios.length && dominios.every((d) => d === sitio.url), `${ruta} no usa solo ${sitio.url}: ${dominios.join(', ')}`)
+}
+
+// Sin JavaScript el cargador no debe tapar nada: la clase la pone el script y tiene un tope propio.
+exigir(!/<html[^>]*cargando/.test(html), 'El HTML sale con el cargador activo')
+exigir(/classList\.remove\('cargando'\)\},\d+\)/.test(html), 'Falta el tope del cargador en <head>')
+
 const archivos = readdirSync(salida, { recursive: true }).map(String)
 exigir(!archivos.some((a) => a.endsWith('.mp4')), 'Se publicó un video: el anterior tiene marca de agua')
 exigir(archivos.some((a) => a.endsWith('logo-indufor-horizontal.svg')), 'Falta el logo vectorial')

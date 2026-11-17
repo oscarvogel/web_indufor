@@ -230,9 +230,66 @@
   text-decoration-thickness: 1px;
 }
 
+/* Cargador: solo con la clase `cargando` (la pone JavaScript); sin ella, la página se ve y se lee igual. */
+.cargador {
+  display: none;
+}
+.cargando .cargador {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: grid;
+  place-items: center;
+  background: var(--color-monte);
+}
+/* Silueta tenue del logo; el relleno sube por dentro, recortado por la misma máscara. */
+.cargador-logo {
+  position: relative;
+  width: clamp(12rem, 36vw, 22rem);
+  aspect-ratio: 10 / 3;
+  background: rgb(239 232 216 / 0.14);
+  mask: url("/img/logo-indufor-horizontal.svg") center / contain no-repeat;
+}
+.cargador-logo span {
+  position: absolute;
+  inset: 0;
+  background: var(--color-pergamino);
+  transform-origin: bottom;
+  animation: llenar 0.8s cubic-bezier(0.3, 0.6, 0.3, 1) both;
+}
+/* Sin porcentaje: si la carga tarda, el logo espera en el 82 %. */
+@keyframes llenar {
+  from {
+    transform: scaleY(0);
+  }
+  to {
+    transform: scaleY(0.82);
+  }
+}
+@keyframes completar {
+  from {
+    transform: scaleY(0.82);
+  }
+  to {
+    transform: scaleY(1);
+  }
+}
+.abriendo .cargador {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.45s ease-out 0.2s;
+}
+.abriendo .cargador-logo span {
+  animation: completar 0.25s ease-out both;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+  }
+  .cargador-logo span,
+  .abriendo .cargador-logo span {
+    animation: none;
   }
   .boton {
     transition: none;

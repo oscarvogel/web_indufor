@@ -7,6 +7,9 @@ import { useGSAP } from '@gsap/react'
 
 gsap.registerPlugin(ScrollTrigger, SplitText, useGSAP)
 
+// Con el cargador encima, las entradas esperan a que se abra (lo reanuda Cargador); si no, correrían tapadas.
+if (typeof document !== 'undefined' && document.documentElement.classList.contains('cargando')) gsap.globalTimeline.pause()
+
 export { gsap, useGSAP, SplitText }
 
 /** Secuencias atadas al scroll: solo acá. En el resto, imagen fija y revelados simples. */

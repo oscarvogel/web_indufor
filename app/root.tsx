@@ -5,6 +5,7 @@ import interTight from '@fontsource-variable/inter-tight/files/inter-tight-latin
 import instrumentSerif from '@fontsource/instrument-serif/files/instrument-serif-latin-400-normal.woff2?url'
 import imperialScript from '@fontsource/imperial-script/files/imperial-script-latin-400-normal.woff2?url'
 import { useScrollSuave } from './lib/motion'
+import Cargador, { ACTIVAR_CARGADOR } from './components/Cargador'
 
 // Las tres están en la primera pantalla o en el primer capítulo: precargarlas evita saltos.
 export const links = () =>
@@ -12,10 +13,12 @@ export const links = () =>
 
 export function Layout({ children }: { children: ReactNode }) {
   return (
-    <html lang="es-AR">
+    // El script de <head> agrega `cargando` antes de hidratar.
+    <html lang="es-AR" suppressHydrationWarning>
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <script dangerouslySetInnerHTML={{ __html: ACTIVAR_CARGADOR }} />
         <meta name="theme-color" content="#16302B" />
         <link rel="icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
@@ -23,6 +26,7 @@ export function Layout({ children }: { children: ReactNode }) {
         <Links />
       </head>
       <body>
+        <Cargador />
         {children}
         <Scripts />
       </body>
